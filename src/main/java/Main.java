@@ -6,12 +6,14 @@ import org.eclipse.jetty.servlet.ServletHolder;
  * Created by zarodov on 01.02.2018.
  */
 public class Main {
-    //Frontend frontend = new Frontend();
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        Frontend frontend = new Frontend();
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        //context.addServlet(new ServletHolder(allRequestsServlet), "/*");
-
         Server server = new Server(8080);
         server.setHandler(context);
+        context.addServlet(new ServletHolder(frontend), "/authform");
+
+        server.start();
+        server.stop();
     }
 }
