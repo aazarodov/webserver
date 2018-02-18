@@ -21,17 +21,4 @@ public class MirrorRequestServlet extends HttpServlet {
         resp.setContentType("text/html;charset=utf-8");
         resp.setStatus(HttpServletResponse.SC_OK);
     }
-
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        Map<String, Object> pageVariables = getPageVariablesMap(req);
-//        String message = req.getParameter("message");
-//        resp.setContentType("text/html;charset=utf-8");
-//        if (message == null || message.isEmpty())
-//            resp.setStatus(HttpServletResponse.SC_FORBIDDEN);
-//        else
-//            resp.setStatus(HttpServletResponse.SC_OK);
-//        pageVariables.put("message", message == null ? "" : message);
-//        resp.getWriter().println(PageGenerator.instance().getPage("page.html", pageVariables));
-//    }
 }
